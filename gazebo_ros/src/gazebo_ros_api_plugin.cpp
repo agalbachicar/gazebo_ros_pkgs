@@ -361,6 +361,7 @@ void GazeboRosApiPlugin::advertiseServices()
   get_physics_properties_service_ = nh_->advertiseService(get_physics_properties_aso);
 
   // publish complete link states in world frame
+  /*
   ros::AdvertiseOptions pub_link_states_ao =
     ros::AdvertiseOptions::create<gazebo_msgs::LinkStates>(
                                                            "link_states",10,
@@ -368,8 +369,10 @@ void GazeboRosApiPlugin::advertiseServices()
                                                            boost::bind(&GazeboRosApiPlugin::onLinkStatesDisconnect,this),
                                                            ros::VoidPtr(), &gazebo_queue_);
   pub_link_states_ = nh_->advertise(pub_link_states_ao);
+  */
 
   // publish complete model states in world frame
+  /*
   ros::AdvertiseOptions pub_model_states_ao =
     ros::AdvertiseOptions::create<gazebo_msgs::ModelStates>(
                                                             "model_states",10,
@@ -377,6 +380,7 @@ void GazeboRosApiPlugin::advertiseServices()
                                                             boost::bind(&GazeboRosApiPlugin::onModelStatesDisconnect,this),
                                                             ros::VoidPtr(), &gazebo_queue_);
   pub_model_states_ = nh_->advertise(pub_model_states_ao);
+  */
 
   // Advertise more services on the custom queue
   std::string set_link_properties_service_name("set_link_properties");
